@@ -1,0 +1,26 @@
+.page{
+  &.listen{
+    .player-btn{
+      position: fixed;
+      bottom:0;
+      height: 80px;
+      background:rgba(0,0,0,0.3);
+      width:100%;
+    }
+    .cd{
+        width: 350px;
+        height: 350px;
+        background-size:cover;
+        border:4px solid #fff;
+        border-radius: 50%;
+        &.rotate{
+          animation: rotate 10s linear 0s infinite;
+        }
+        animation-fill-mode : forwards
+    }
+    @-webkit-keyframes rotate {
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+    }
+  }
+}

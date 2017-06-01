@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">haha</button>
+    <script>
+
+
+
+        Function.prototype.mybind = function (scope) {
+            console.log(scope,this)
+            var fn = this;
+            return function () {
+                return fn.apply(scope);
+            };
+        }
+        var btn = document.getElementById('btn');
+        var foo = {
+            num:90,
+
+            event:function(){
+                btn.addEventListener('click',function(){
+                    console.log(this,this.num)
+                }.mybind(this))
+            }
+        }
+
+        foo.event();
+
+    </script>
+</body>
+</html>
